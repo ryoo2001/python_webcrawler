@@ -2,6 +2,7 @@ import urllib.error
 import urllib.request
 
 # 获取网页
+
 # resource = urllib.request.urlopen(url="http://baidu.com")
 # print(resource.status)
 # print(resource.getheaders())
@@ -10,6 +11,7 @@ import urllib.request
 # print(html)
 
 # 模拟浏览器访问
+
 # head = {
 #     "User-Agent": "Mozilla/5.0(Windows NT 10.0;Win64;x64)AppleWebKit/537.36(KHTML, likeGecko)Chrome/113.0.0.0Safari / 537.36"
 # }
@@ -20,6 +22,7 @@ import urllib.request
 # print(html)
 
 # 获取网页信息并存储
+
 # head = {
 #     "User-Agent": "Mozilla/5.0(Windows NT 10.0;Win64;x64)AppleWebKit/537.36(KHTML, likeGecko)Chrome/113.0.0.0Safari / 537.36"
 # }
