@@ -7,12 +7,11 @@ h2_first_item = bs.find('h2')
 print(h2_first_item)
 
 # Part2：BeautifulSoup举例说明2-find_all()方法
-from bs4 import BeautifulSoup
 
-with open("./test.html", "rb") as file:
+with open("py/test.html", "rb") as file:
     html = file.read()
 bs = BeautifulSoup(html, "html.parser")
-h2_items = bs.find_all('h2')
+h2_items = bs.find_all('h1')
 print(h2_items)
 
 # Part3: BeautifulSoup举例说明3-为查找添加限定条件
