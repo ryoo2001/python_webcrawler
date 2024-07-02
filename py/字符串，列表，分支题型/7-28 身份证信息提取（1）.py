@@ -1,5 +1,0 @@
-ID = input()
-year = int(ID[6:10])
-mon = int(ID[10:12])
-day = int(ID[12:14])
-print("{}年{}月{}日".format(year, mon, day))
