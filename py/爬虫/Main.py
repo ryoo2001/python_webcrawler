@@ -47,7 +47,7 @@ def get_data(baseurl):
         html = ask_url(url)
         # 2. 解析数据
         soup = BeautifulSoup(html, "html.parser")
-        for item in soup.find_all('div', class_='indent'):
+        for item in soup.find_all('tr', class_='item'):
             data = []
             item = str(item)
             # 获取音乐的链接
@@ -58,13 +58,13 @@ def get_data(baseurl):
             data.append(imgsrc)
             # 获取音乐的名字
             titles = re.findall(findTitle, item)
-            if len(titles) == 2:
-                ctitle = titles[0]
+            if titles:
+                ctitle = titles[0] if len(titles) > 0 else ""
+                otitle = titles[1].replace("/", "") if len(titles) > 1 else ""
                 data.append(ctitle)
-                otitle = titles[1].replace("/", "")
                 data.append(otitle)
             else:
-                data.append(titles[0])
+                data.append("")
                 data.append("")
             # 获取音乐的评分
             rating = re.findall(findRating, item)[0]
