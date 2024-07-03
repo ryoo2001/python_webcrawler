@@ -1,32 +1,51 @@
-from bs4 import BeautifulSoup
+# import re
 
-with open("./test.html", "rb") as file:
-    html = file.read()
-bs = BeautifulSoup(html, "html.parser")
-h2_first_item = bs.find('h2')
-print(h2_first_item)
+# a = 'python 1111 java739php'
+# r = re.findall('[a-z]{3,6}?', a) # 贪婪模式（最大）
+# print(r)
 
-# Part2：BeautifulSoup举例说明2-find_all()方法
-from bs4 import BeautifulSoup
+# a = 'python 1111 java739php'
+# r = re.findall('[a-z]{3,6}', a) # 非贪婪模式 （最小）
+# print(r)
 
-with open("./test.html", "rb") as file:
-    html = file.read()
-bs = BeautifulSoup(html, "html.parser")
-h2_items = bs.find_all('h2')
-print(h2_items)
+# a = 'pytho1111 python739pythonn^'
+# r = re.findall('python*', a)
+# print(r)
+# r = re.findall('python+', a)
+# print(r)
+# r = re.findall('python?', a)
+# print(r) 
 
-# Part3: BeautifulSoup举例说明3-为查找添加限定条件
-from bs4 import BeautifulSoup
+# import re
 
-with open("./test.html", "rb") as file:
-    html = file.read()
-bs = BeautifulSoup(html, "html.parser")
-h2_items = bs.find_all('li', class_="Special")
-print(h2_items)
+# qq = "qq1000001qq"
+# r = re.findall('\d{4,8}', qq)
+# print(r)
 
-# Part4: BeautifulSoup举例说明4-提取豆瓣电影Top250的核心信息
-with open("./test.html","rb") as file:
-    html = file.read()
-bs = BeautifulSoup(html, "html.parser")
-t_list=bs.find_all("div", class_="item")
-print(t_list)
+# import re
+
+# qq = "qq1000001"
+# r = re.findall('^\d{4,8}', qq)  # '边界匹配，必须以4位或8位开头，
+# print(r)
+
+# import re
+
+# qq = "qq1000001"
+# r = re.findall('\d{4,8}$', qq) # $ 以4位或者8位数字结束
+# print(r)
+
+# import re
+
+# qq = "qq1000001"
+# r = re.findall('^\d{4,8}$', qq)
+# print(r)
+
+import re
+
+a = 'python 1111 java739php'
+r = re.findall('[a-z]{3}', a)
+print(r)
+
+findLink = re.compile(r'[a-z]{3}')
+r = re.findall(findLink, a)
+print(r)
