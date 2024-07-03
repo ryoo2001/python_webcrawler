@@ -47,7 +47,7 @@ def get_data(baseurl):
         html = ask_url(url)
         # 2. 解析数据
         soup = BeautifulSoup(html, "html.parser")
-        for item in soup.find_all("table", class_="indent"):
+        for item in soup.find_all('div', class_='indent'):
             data = []
             item = str(item)
             # 获取音乐的链接
