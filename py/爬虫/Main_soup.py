@@ -1,14 +1,14 @@
-
 from bs4 import BeautifulSoup
 import urllib.request, urllib.response, urllib.error
 import re
 
 findLink = re.compile(r'<a href="(.*?)">')
 findImSrc = re.compile(r'<img.*src="(.*?)"', re.S)
-findTitle = re.compile(r'<a href="https://music.douban.com/subject/\d+/"[^>]*>\s*(.*?)\s*</a>')
+findTitle = re.compile(
+    r'<a href="https://music.douban.com/subject/\d+/"[^>]*>\s*(.*?)\s*</a>'
+)
 findRating = re.compile(r'<span class="rating_nums">(\d+\.\d+)</span>')
 findJudge = re.compile(r'<span class="pl">\s*\(\s*(\d+)人评价\s*\)\s*</span>')
-# findInq = re.compile(r'<span class="inq">(.*?)</span>')
 findBd = re.compile(r'<p class="pl">\s*(.*?)\s*/')
 
 
@@ -47,39 +47,29 @@ def get_data(baseurl):
         html = ask_url(url)
         # 2. 解析数据
         soup = BeautifulSoup(html, "html.parser")
-        for item in soup.find_all('tr', class_='item'):
-            data = []
-            item = str(item)
+        for item in soup.find_all("tr", class_="item"):
+            res = {}
+
             # 获取音乐的链接
-            link = re.findall(findLink, item)[0]
-            data.append(link)
+            res['link'] =  item.find_all("a")[0]['href']
             # 获取图片的链接
-            imgsrc = re.findall(findImSrc, item)[0]
-            data.append(imgsrc)
-            # 获取音乐的名字
-            titles = re.findall(findTitle, item)
-            if titles:
-                ctitle = titles[0] if len(titles) > 0 else ""
-                otitle = titles[1].replace("/", "") if len(titles) > 1 else ""
-                data.append(ctitle)
-                data.append(otitle)
-            else:
-                data.append("")
-                data.append("")
-            # 获取音乐的评分
-            rating = re.findall(findRating, item)[0]
-            data.append(rating)
-            # 获取音乐的评价数
-            judgeNum = re.findall(findJudge, item)[0]
-            data.append(judgeNum)
-            # 获取演唱者的名字
-            bd = re.findall(findBd, item)[0]
-            bd = re.sub('<br(\s+)?/>(\s+)?', "", bd)
-            bd = re.sub("/", "", bd)
-            data.append(bd.strip())
-            print(data)
+            res['imgsrc'] = item.find_all("img")[0]['src']
+
+            # # 获取音乐的名字
+            title = item.select(".pl2 > a")[0]
+            res['title'] = next(title.children).strip()
+            alt_title = title.select('span')
+            if alt_title:
+                res['alt_title'] = alt_title[0].get_text().strip()
+
+            res['rate'] = item.select(".rating_nums")[0].get_text().strip()
+            rate_count_el = item.select(".star > span.pl")[0]
+            res['rate_count'] = re.findall(r'\d+', rate_count_el.get_text())[0]
+            info_el = item.select("p.pl")[0]
+            res['artists'] = info_el.get_text().split("/")[0].strip()
+            print(res)
             # 每一个音乐的信息存入到datalist里面
-            datalist.append(data)
+            datalist.append(res)
     print(len(datalist))
     return datalist
 
