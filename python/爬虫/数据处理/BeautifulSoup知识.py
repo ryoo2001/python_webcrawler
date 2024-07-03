@@ -11,7 +11,8 @@ soup1 = BeautifulSoup(open('test.html'))
 # 搜索文档
 ## find_all( name , attrs , recursive , text , **kwargs )
 ### name参数
-soup.find_all("h1") # 查找文档中h1标签内容
+soup.find_all("h1") # 查找文档中h1标签所有内容
+soup.find_all("h1"[0]) # 查找文档h1标签中第一个内容
 soup.find_all(["h1","h2"]) # 查找文档中h1和h2标签内容
 ### keyword参数
 soup.find_all("h1",class_="Special" ) #查找h1标签中class_="Special" 内容
