@@ -2,15 +2,6 @@ from bs4 import BeautifulSoup
 import urllib.request, urllib.response, urllib.error
 import re
 
-findLink = re.compile(r'<a href="(.*?)">')
-findImSrc = re.compile(r'<img.*src="(.*?)"', re.S)
-findTitle = re.compile(
-    r'<a href="https://music.douban.com/subject/\d+/"[^>]*>\s*(.*?)\s*</a>'
-)
-findRating = re.compile(r'<span class="rating_nums">(\d+\.\d+)</span>')
-findJudge = re.compile(r'<span class="pl">\s*\(\s*(\d+)人评价\s*\)\s*</span>')
-findBd = re.compile(r'<p class="pl">\s*(.*?)\s*/')
-
 
 def first_spider():
     print("this is Zhang first web-spider program")
