@@ -54,7 +54,6 @@ def get_data(baseurl):
             res['link'] =  item.find_all("a")[0]['href']
             # 获取图片的链接
             res['imgsrc'] = item.find_all("img")[0]['src']
-
             # # 获取音乐的名字
             title = item.select(".pl2 > a")[0]
             res['title'] = next(title.children).strip()
