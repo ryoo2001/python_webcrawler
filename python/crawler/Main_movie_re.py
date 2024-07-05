@@ -1,4 +1,5 @@
-
+import xlrd
+import xlwt
 from bs4 import BeautifulSoup
 import urllib.request, urllib.response, urllib.error
 import re
@@ -19,7 +20,9 @@ def first_spider():
 
 def main():
     baseurl = "https://movie.douban.com/top250?start="
-    get_data(baseurl)
+    patch = "python/crawler/豆瓣电影top250.xls"
+    date = get_data(baseurl)
+    save_data(date,patch)
 
 
 # 爬取单个网页的html内容
@@ -87,10 +90,24 @@ def get_data(baseurl):
             print(data)
             # 每一个电影的信息存入到datalist里面
             datalist.append(data)
-    print(datalist)
-    print(len(datalist))
+    print("数据解析完成")
     return datalist
 
+
+# 保存数据
+def save_data(datalist, savepath):
+    print("saving....")
+    data_excel = xlwt.Workbook(encoding="utf-8", style_compression=0)
+    new_excel = data_excel.add_sheet("电影top250", cell_overwrite_ok=True)
+    col = ("电影链接","图片链接","电影中文名","电影外国名","评分","评价数","概况","相关信息")
+    for i in range(0,8):
+        new_excel.write(0,i,col[i])
+    for i in range(0,250):
+        date = datalist[i]
+        for j in range(0,8):
+            new_excel.write(i + 1,j,date[j])
+    data_excel.save(savepath)
+    print("数据保存完成")
 
 if __name__ == "__main__":
     first_spider()
