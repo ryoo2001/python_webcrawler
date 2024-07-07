@@ -20,7 +20,7 @@ def first_spider():
 
 def main():
     baseurl = "https://movie.douban.com/top250?start="
-    patch = "python/crawler/豆瓣电影top250.xls"
+    patch = "豆瓣电影top250.xls"
     date = get_data(baseurl)
     save_data(date,patch)
 
