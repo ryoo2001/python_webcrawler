@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import urllib.request, urllib.response, urllib.error
 import re
 
+
 findLink = re.compile(r'<a href="(.*?)">')
 findImSrc = re.compile(r'<img.*src="(.*?)"', re.S)
 findTitle = re.compile(r'<span class="title">(.*?)</span>')

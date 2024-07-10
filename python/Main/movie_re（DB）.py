@@ -1,8 +1,7 @@
-import xlrd
-import xlwt
 from bs4 import BeautifulSoup
 import urllib.request, urllib.response, urllib.error
 import re
+import sqlite3
 
 
 findLink = re.compile(r'<a href="(.*?)">')
@@ -22,7 +21,7 @@ def first_spider():
 def main():
     baseurl = "https://movie.douban.com/top250?start="
     date = get_data(baseurl)
-    print(date)
+    insert_data(date)
 
 
 # 爬取单个网页的html内容
@@ -92,6 +91,40 @@ def get_data(baseurl):
             datalist.append(data)
     print("数据解析完成")
     return datalist
+
+
+# 创建数据库
+def new_database():
+    conn = sqlite3.connect('movie.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS music (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            link TEXT,
+            imgsrc TEXT,
+            name_cn TEXT,
+            name_en TEXT,
+            rate TEXT,
+            rate_count INTEGER,
+            summary TEXT
+            info TEXT
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+
+# 数据保存入数据库
+def insert_data(datalist):
+    conn = sqlite3.connect('movie.db')
+    cursor = conn.cursor()
+    for data in datalist:
+        cursor.execute('''
+        INSERT INTO movie (link, imgsrc, name_cn, name_en, rate, rate_count, summary, info)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]))
+    conn.commit()
+    conn.close()
 
 if __name__ == "__main__":
     first_spider()
