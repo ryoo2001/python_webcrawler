@@ -19,6 +19,7 @@ def first_spider():
 
 
 def main():
+    new_database()
     baseurl = "https://movie.douban.com/top250?start="
     date = get_data(baseurl)
     insert_data(date)
@@ -98,7 +99,7 @@ def new_database():
     conn = sqlite3.connect('movie.db')
     cursor = conn.cursor()
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS music (
+        CREATE TABLE IF NOT EXISTS movie (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             link TEXT,
             imgsrc TEXT,
@@ -106,7 +107,7 @@ def new_database():
             name_en TEXT,
             rate TEXT,
             rate_count INTEGER,
-            summary TEXT
+            summary TEXT,
             info TEXT
         )
     ''')
