@@ -107,7 +107,7 @@ def new_database():
             name_en TEXT,
             rate TEXT,
             rate_count INTEGER,
-            summary TEXT,
+            slogan TEXT,
             info TEXT
         )
     ''')
@@ -121,7 +121,7 @@ def insert_data(datalist):
     cursor = conn.cursor()
     for data in datalist:
         cursor.execute('''
-        INSERT INTO movie (link, imgsrc, name_cn, name_en, rate, rate_count, summary, info)
+        INSERT INTO movie (link, imgsrc, name_cn, name_en, rate, rate_count, slogan, info)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         ''', (data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]))
     conn.commit()

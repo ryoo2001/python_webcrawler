@@ -100,7 +100,7 @@ def save_data(datalist, savepath):
     print("saving....")
     data_excel = xlwt.Workbook(encoding="utf-8", style_compression=0)
     new_excel = data_excel.add_sheet("电影top250", cell_overwrite_ok=True)
-    col = ("电影链接","图片链接","电影中文名","电影外国名","评分","评价数","概况","相关信息")
+    col = ("电影链接","图片链接","电影中文名","电影外国名","评分","评价数","口号","相关信息")
     for i in range(0,8):
         new_excel.write(0,i,col[i])
     for i in range(0,250):
