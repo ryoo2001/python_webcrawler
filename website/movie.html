@@ -69,7 +69,7 @@
 </div>
 <h3>连接SQlite获取信息</h3>
 <div class="agile_dwng">
-<a href="#" data-toggle="modal" data-target="#myModal">请见详情 </a>
+<a href="#" data-toggle="modal" data-target="#myModal">技术细节 </a>
   <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
 		<div class="modal-dialog" role="document">
              <div class="modal-content">
@@ -78,7 +78,9 @@
           <h4 class="modal-title">技术细节</h4>
         </div>
         <div class="modal-body">
-          <p>详见文字</p>
+          <p>首先，使用SQLite库连接到SQLite数据库,在成功连接到数据库后，我们需要查询电影信息。
+            <br>其次，通过render_template函数将从数据库中获取的数据传递到HTML模板，以便在网页上展示。
+            <br>最后，避免一次性加载过多数据，在查询数据时指定LIMIT和OFFSET，每页只显示25条记录，并在HTML模板中添加分页控制。</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
