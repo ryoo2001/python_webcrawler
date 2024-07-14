@@ -10,6 +10,10 @@ app = Flask(__name__, static_url_path='', static_folder='website',
 def index():
     return flask.render_template("index.html")
 
+@app.route("/index")
+def index1():
+    return flask.render_template("index.html")
+
 @app.route('/movie')
 def movie():
     page = request.args.get('page', 1, type=int)
@@ -28,5 +32,13 @@ def movie():
 
     return render_template('movie.html', movies=movies, page=page, total_pages=total_pages)
 
+@app.route("/score")
+def score():
+   return flask.render_template("score.html")
+
+@app.route("/team")
+def team():
+   return flask.render_template("team.html")
+
 if __name__ == '__main__':
- app.run(host='127.0.0.1', port=5000)
+ app.run(host='127.0.0.1', port=5000, debug=True)
