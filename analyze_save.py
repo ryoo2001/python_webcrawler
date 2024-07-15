@@ -18,7 +18,7 @@ def first_spider():
     print("开始爬取....")
 
 
-def main():
+def db():
     new_database()
     baseurl = "https://movie.douban.com/top250?start="
     date = get_data(baseurl)
@@ -127,6 +127,3 @@ def insert_data(datalist):
     conn.commit()
     conn.close()
 
-if __name__ == "__main__":
-    first_spider()
-    main()
