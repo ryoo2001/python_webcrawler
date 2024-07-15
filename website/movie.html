@@ -25,7 +25,7 @@
 <i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">movie@neusoft.edu.cn</a>
 </div>
 <div class="col-md-6 w3_c">
-<i class="fa fa-phone" aria-hidden="true"></i> +1145141919
+
 </div>
 <div class="col-md-3 w3_r">
   </i> 数据采集时间：2024年7月
@@ -127,26 +127,28 @@
              <!-- Pagination controls -->
              <nav aria-label="Page navigation">
                <ul class="pagination">
-                 {% if page > 1 %}
+                <!-- 显示上一页按钮  -->
+                 {% if page > 1 %} <!-- 检查当前页码是否大于1  -->
                  <li>
                    <a href="/movie?page={{ page - 1 }}" aria-label="Previous">
                      <span aria-hidden="true">&laquo;</span>
                    </a>
                  </li>
                  {% endif %}
-                 {% for p in range(1, total_pages + 1) %}
+                 <!-- 显示页码按钮  -->
+                 {% for p in range(1, total_pages + 1) %} <!-- 遍历从1到总页数的每一个页码p，并为每个页码生成一个链接  -->
                  <li class="{% if page == p %}active{% endif %}"><a href="/movie?page={{ p }}">{{ p }}</a></li>
                  {% endfor %}
-                 {% if page < total_pages %}
+                <!-- 显示“下一页”按钮  -->
+                 {% if page < total_pages %} <!-- 检查当前页码是否小于总页数  -->
                  <li>
                    <a href="/movie?page={{ page + 1 }}" aria-label="Next">
-                     <span aria-hidden="true">&raquo;</span>
+                     <span aria-hidden="true">&raquo;</span> <!-- 如果是，就显示一个下一页的按钮  -->
                    </a>
                  </li>
                  {% endif %}
                </ul>
              </nav>
-
         </div>
     
 	</div>
@@ -178,7 +180,7 @@
 	<!-- //footer -->
 <div class="copyright">
 		<div class="container">
-			<p>Copyright &copy; 版权.<a target="_blank" href="http://www.cssmoban.com/">模板源于</a></p>
+			<p>Copyright &copy; 2024.第三组杠上开花版权所有.<a target="_blank" href="http://www.cssmoban.com/">模板源于</a></p>
 		</div>
 	</div>
 

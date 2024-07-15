@@ -4,12 +4,12 @@
 <title>豆瓣电影统计平台</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
-<meta name="keywords" content="" />
+<meta name="keywords" content="电影, 数据, 统计, 豆瓣" />
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/owl.carousel.css" rel="stylesheet">
 <link rel="stylesheet" href="css/lightbox.css">
- <link type="text/css" rel="stylesheet" href="css/cm-overlay.css" />
+<link type="text/css" rel="stylesheet" href="css/cm-overlay.css" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
@@ -18,124 +18,111 @@
 <body>
 <!-- banner -->
 <div class="w3l_banner">
-
-<div class="w3_bandwn">
-<div class="container">
-<div class="col-md-3 w3_l">
-<i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">movie@neusoft.edu.cn</a>
-</div>
-<div class="col-md-6 w3_c">
-<i class="fa fa-phone" aria-hidden="true"></i> +1145141919
-</div>
-<div class="col-md-3 w3_r">
-  </i> 数据采集时间：2024年7月
-</div>
-<div class="clearfix"></div>
-</div>
-</div>
-<nav class="navbar navbar-default">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-     <h1><a class="navbar-brand" href="#">豆瓣电影数据展示</a></h1>
+    <div class="w3_bandwn">
+        <div class="container">
+            <div class="col-md-3 w3_l">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">movie@neusoft.edu.cn</a>
+            </div>
+            <div class="col-md-6 w3_c"></div>
+            <div class="col-md-3 w3_r">
+                数据采集时间：2024年7月
+            </div>
+            <div class="clearfix"></div>
+        </div>
     </div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1><a class="navbar-brand" href="#">首页</a></h1>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index" class="page-scroll">首页</a></li>
+                    <li><a href="/movie" class="page-scroll">电影</a></li>
+                    <li><a href="/score" class="page-scroll">评分</a></li>
+                    <li><a href="/word" class="page-scroll">词云</a></li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="w3l_frm"></div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="w3l_bandwn">
+        <h2>欢迎查看豆瓣电影数据展示平台</h2>
+        <div class="about-p text-center">
+            <span class="sub-title"></span>
+            <span class="fa fa-star" aria-hidden="true"></span>
+            <span class="sub-title"></span>
+        </div>
+        <h3>基于Python, Flask, PyEchart技术</h3>
+    </div>
+</div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/index" class="page-scroll">首页    </a></li>
-        <li><a href="/movie" class="page-scroll">电影    </a></li>
-		<li><a href="/score" class="page-scroll">评分    </a></li>
-		<li><a href="/word" class="page-scroll">词云    </a></li>
-      </ul>
-          <form class="navbar-form navbar-left">
-        <div class="w3l_frm">
-		</div>
-          </form>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<div class="w3l_bandwn">
-<h2>欢迎查看豆瓣电影统计</h2>
-    <div class="about-p text-center">
-<span class="sub-title"></span>
-<span class="fa fa-star" aria-hidden="true"></span>
-<span class="sub-title"></span>
+<!-- gallery -->
+<!-- <div class="gallery" id="gallery"> -->
+
+    <!-- Gallery content can be added here -->
 </div>
-<h3>基于Python, Flask, PyEchart技术</h3>
-</div>
- </div>
-</div>
-   <!-- gallery -->
-   <div class="gallery" id="gallery">
-        <h3>豆瓣电影统计展示平台</h3>
-    <!-- //gallery -->
 
 <!-- footer -->
-	<div class="footer" id="footer">
-		<div class="container">
-			<div class="list">
-				<div class="col-md-3 wthree_fl">
-					<a href="#">豆瓣影视</a>
-					</div>
-					
-				<div class="col-md-6 wthree_fc">
-					<h6> 博川路 </h6>
-					<h6> 大连东软信息学院 </h6>
-					<h6> 中国 </h6>
-					</div>
-					
-					<div class="col-md-3 wthree_fr">
-					<h6>+1145141919</h6>
-					<h6><a href="mailto:service@decorate.com">movie@neusoft.cn</a></h6>
-					</div>
-			</div>
-		</div>
-	</div>
-	<!-- //footer -->
-<div class="copyright">
-		<div class="container">
-			<p>Copyright &copy; 2024.<a target="_blank" href="http://www.cssmoban.com/">模板源于</a></p>
-		</div>
-	</div>
+<div class="footer" id="footer">
+    <div class="container">
+        <div class="list">
+            <div class="col-md-3 wthree_fl">
+                <a href="#">豆瓣影视</a>
+            </div>
+            <div class="col-md-6 wthree_fc">
+                <h6>博川路</h6>
+                <h6>大连东软信息学院</h6>
+                <h6>中国</h6>
+            </div>
+            <div class="col-md-3 wthree_fr">
+                <h6>+1145141919</h6>
+                <h6><a href="mailto:service@decorate.com">movie@neusoft.cn</a></h6>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- copyright -->
+<div class="copyright">
+    <div class="container">
+        <p>Copyright &copy; 2024.第三组杠上开花版权所有. <a target="_blank" href="http://www.cssmoban.com/">模板源于</a></p>
+    </div>
+</div>
+
+<!-- Scripts -->
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/move-top.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/grayscale.js"></script>
 <script src="js/SmoothScroll.min.js"></script>
-
- <!-- /gallery -->
-    <script src="js/jquery.tools.min.js"></script>
-    <script src="js/jquery.mobile.custom.min.js"></script>
-    <script src="js/jquery.cm-overlay.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('.cm-overlay').cmOverlay();
-        });
-    </script>
-    <!-- //gallery -->
-
-<!-- Move-to-top-->
-<script type="text/javascript">
-$(document).ready(function() {
-var defaults = {
-containerID: 'toTop', // fading element id
-containerHoverID: 'toTopHover', // fading element hover id
-scrollSpeed: 1200,
-easingType: 'linear' 
-};
-$().UItoTop({ easingType: 'easeOutQuart' });
-});
+<script src="js/jquery.tools.min.js"></script>
+<script src="js/jquery.mobile.custom.min.js"></script>
+<script src="js/jquery.cm-overlay.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.cm-overlay').cmOverlay();
+    });
 </script>
-<!--/Move-to-top-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+        };
+        $().UItoTop({ easingType: 'easeOutQuart' });
+    });
+</script>
 </body>
 </html>
