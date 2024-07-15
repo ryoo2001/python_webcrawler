@@ -10,7 +10,6 @@ cursor = conn.cursor()
 cursor.execute("SELECT name_cn FROM movie")
 titles = cursor.fetchall()
 
-# 关闭数据库连接
 conn.close()
 
 # 处理电影名称，生成词云图数据

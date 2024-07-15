@@ -10,7 +10,6 @@ cursor = conn.cursor()
 cursor.execute("SELECT rate, COUNT(*) as count FROM movie GROUP BY rate")
 data = cursor.fetchall()
 
-# 关闭数据库连接
 conn.close()
 
 # 准备数据
