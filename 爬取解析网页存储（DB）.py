@@ -96,7 +96,7 @@ def get_data(baseurl):
 
 # 创建数据库
 def new_database():
-    conn = sqlite3.connect('movie.db')
+    conn = sqlite3.connect('website/movie.db')
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS movie (
@@ -117,7 +117,7 @@ def new_database():
 
 # 数据保存入数据库
 def insert_data(datalist):
-    conn = sqlite3.connect('movie.db')
+    conn = sqlite3.connect('website/movie.db')
     cursor = conn.cursor()
     for data in datalist:
         cursor.execute('''

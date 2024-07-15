@@ -1,7 +1,8 @@
 import flask
 from flask import Flask, render_template, request
 import sqlite3
-
+from pyecharts.charts import Scatter
+from pyecharts import options as opts
 
 app = Flask(__name__, static_url_path='', static_folder='website',
                   template_folder='website')
@@ -34,11 +35,11 @@ def movie():
 
 @app.route("/score")
 def score():
-   return flask.render_template("score.html")
+    return flask.render_template('score.html')
 
-@app.route("/team")
-def team():
-   return flask.render_template("team.html")
+@app.route("/word")
+def word():
+   return flask.render_template("word.html")
 
 if __name__ == '__main__':
  app.run(host='127.0.0.1', port=5000, debug=True)
