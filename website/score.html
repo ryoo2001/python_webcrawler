@@ -73,24 +73,27 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="w3l_bandwn">
- <h2>评分分布页面1</h2>
+ <h2>电影评分统计</h2>
  <div class="about-p text-center">
 <span class="sub-title"></span>
 <span class="fa fa-star" aria-hidden="true"></span>
 <span class="sub-title"></span>
 </div>
-<h3>评分分布页面2</h3>
+<h3>根据评分数据生成了对应的图表</h3>
 <div class="agile_dwng">
-<a href="#" data-toggle="modal" data-target="#myModal">请见详情 </a>
+<a href="#" data-toggle="modal" data-target="#myModal">技术细节 </a>
   <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
 		<div class="modal-dialog" role="document">
              <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">详见标题</h4>
+          <h4 class="modal-title">技术细节</h4>
         </div>
         <div class="modal-body">
-          <p>详见内容</p>
+          <p>首先，使用SQLite库连接到SQLite数据库，获取评分数据
+            <br>其次，保存评分为一个列表，电影数量与评分数对应，再使用pyecharts库生成散点图
+            <br>最后，生成散点图的网页保存进网站目录下，对应网页中使用frame插入网页，在用js框架使散点图居中
+          </p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -108,7 +111,7 @@
    <div class="gallery" id="gallery">
          <div class="container-fluid">
 
-            <h3>豆瓣评分分布</h3>
+            <h3>评分分布图</h3>
              <div class="container">
              <div class="chart-container">
                  <!-- 嵌入生成的散点图 -->

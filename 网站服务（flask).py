@@ -1,8 +1,6 @@
 import flask
 from flask import Flask, render_template, request
 import sqlite3
-from pyecharts.charts import Scatter
-from pyecharts import options as opts
 
 app = Flask(__name__, static_url_path='', static_folder='website',
                   template_folder='website')
@@ -21,7 +19,7 @@ def movie():
     per_page = 25
     offset = (page - 1) * per_page
 
-    conn = sqlite3.connect('movie.db')
+    conn = sqlite3.connect('website/movie.db')
     cursor = conn.cursor()
     cursor.execute('SELECT COUNT(*) FROM movie')
     total_movies = cursor.fetchone()[0]
