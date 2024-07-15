@@ -6,7 +6,7 @@ from web import run_web
 def main():
     # 开始爬取提示
     first_spider()
-    
+
     # 爬取数据并存储到数据库
     db()
 

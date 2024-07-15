@@ -42,7 +42,7 @@ def run_web():
     def word():
         return flask.render_template("word.html")
 
-
-    app.run(host='127.0.0.1', port=5000)
+    # 启动服务，地址为127.0.0.1,端口为5000，并关闭debug防止flask启动两次，造成数据重复
+    app.run(host='127.0.0.1', port=5000, use_reloader=False, debug=False)
 
 
