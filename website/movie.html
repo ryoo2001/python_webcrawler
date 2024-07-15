@@ -78,9 +78,9 @@
           <h4 class="modal-title">技术细节</h4>
         </div>
         <div class="modal-body">
-          <p>首先，使用SQLite库连接到SQLite数据库,在成功连接到数据库后，我们需要查询电影信息。
-            <br>其次，通过render_template函数将从数据库中获取的数据传递到HTML模板，以便在网页上展示。
-            <br>最后，避免一次性加载过多数据，在查询数据时指定LIMIT和OFFSET，每页只显示25条记录，并在HTML模板中添加分页控制。</p>
+          <p>1.使用SQLite库连接到SQLite数据库,在成功连接到数据库后，我们需要查询电影信息。
+            <br>2.通过render_template函数将从数据库中获取的数据传递到HTML模板，以便在网页上展示。
+            <br>3.避免一次性加载过多数据，在查询数据时指定LIMIT和OFFSET，每页只显示25条记录，并在HTML模板中添加分页控制。</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

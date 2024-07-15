@@ -80,9 +80,9 @@
           <h4 class="modal-title">技术细节</h4>
         </div>
         <div class="modal-body">
-          <p>首先，使用SQLite库连接到SQLite数据库，获取评分数据
-            <br>其次，保存评分为一个列表，电影数量与评分数对应，再使用pyecharts库生成散点图
-            <br>最后，生成散点图的网页保存进网站目录下，对应网页中使用frame插入网页，在用js框架使散点图居中
+          <p>1.连接到SQLite数据库并提取电影中文名称
+            <br>2.将电影名称处理为词云图需要的数据格式,创建词云图并保存为HTML文件,保存在网站目录
+            <br>3.将生成的词云图嵌入HTML页面中
           </p>
         </div>
         <div class="modal-footer">
@@ -98,13 +98,16 @@
 </div>
 
    <!-- gallery -->
-   <div class="gallery" id="gallery" align="center">
-         <div class="container-fluid">
-            <h3>词云图</h3>
-            <img src="./images/cloud_word.png"  class="img-responsive" alt="tfg">
-
-
+   <div class="gallery" id="gallery">
+    <div class="container-fluid">
+        <h3>电影词云图</h3>
+        <div class="container">
+            <div class="chart-container" style="display: flex; justify-content: center; align-items: center; height: 500px;">
+                <iframe src="{{ url_for('static', filename='wordcloud.html') }}" width="80%" height="560px" frameborder="0"></iframe>
+            </div>
         </div>
+    </div>
+</div>
     
 	</div>
     <!-- //gallery -->
