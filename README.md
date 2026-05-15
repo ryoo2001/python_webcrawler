@@ -25,8 +25,9 @@
 +-- temp_date/                # 示例数据与历史输出
 +-- website/                  # Flask 使用的页面、静态资源和数据库
 +-- website_sample/           # 网页模板样例
-+-- website_test/             # 测试页面模板
 +-- docs/                     # 项目文档
++-- requirements.txt          # Python 依赖列表
++-- .gitignore                # 本地缓存和环境文件忽略规则
 ```
 
 更详细的目录说明见 [docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)。
@@ -35,7 +36,7 @@
 
 建议使用 Python 3.10 或更高版本。
 
-主要依赖：
+主要依赖记录在 `requirements.txt`：
 
 ```text
 beautifulsoup4
@@ -48,7 +49,7 @@ xlwt
 安装依赖：
 
 ```bash
-pip install beautifulsoup4 flask pyecharts xlrd xlwt
+pip install -r requirements.txt
 ```
 
 ## 快速开始
@@ -100,6 +101,7 @@ http://127.0.0.1:5000
 - 豆瓣页面结构或访问策略变化时，爬虫解析规则可能需要同步调整。
 - 运行爬虫时请控制访问频率，遵守目标网站的 robots、服务条款和相关法律法规。
 - 当前项目偏课程实践用途，代码中保留了多个阶段的实验文件和示例模板。
+- `.gitignore` 已忽略 Python 缓存、虚拟环境、本地编辑器配置和常见系统文件。
 - 如果网页显示乱码，优先确认 Python 文件、HTML 文件和数据库内容是否统一使用 UTF-8 编码。
 
 ## 文档
